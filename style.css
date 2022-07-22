@@ -89,3 +89,8 @@ form button:hover {
 .delete-item {
   background: rgba(255, 0, 0, 0.788);
 }
+
+#trash,
+#check {
+  pointer-events: none;
+}
