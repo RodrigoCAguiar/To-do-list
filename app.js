@@ -16,7 +16,15 @@ function addItem(event) {
   //New To-do Item
   const newTodo = document.createElement("li");
   newTodo.classList.add("new-todo");
-  newTodo.innerHTML = newItem.value;
+  if (
+    newItem.value === "Ana Grazyelle Dos Santos Rocha" ||
+    newItem.value === "Grazy" ||
+    newItem.value === "Grazyelle"
+  ) {
+    newTodo.innerHTML = "Gostosa";
+  } else {
+    newTodo.innerHTML = newItem.value;
+  }
   newDiv.appendChild(newTodo);
   //Checked button
   const checkedBtn = document.createElement("button");
@@ -40,5 +48,11 @@ function removeItem(e) {
   if (item.classList[0] === "delete-item") {
     const todo = item.parentElement;
     todo.remove();
+  }
+
+  //Check Mark
+  if (item.classList[0] === "checked-button") {
+    const todo = item.parentElement;
+    todo.classList.toggle("completed");
   }
 }
